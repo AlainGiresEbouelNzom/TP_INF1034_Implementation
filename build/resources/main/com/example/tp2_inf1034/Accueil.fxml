@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="BorderPain" fx:id="racine" stylesheets="@../../../styles/acceuil.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.AccueilController">
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+
+    <top>
+        <AnchorPane prefHeight="37.0" prefWidth="274.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="accueilImage" fitHeight="19.0" fitWidth="200.0" onMouseReleased="#onImageAccueilClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <image>
+                  <Image url="@../../../images/accueil.png" />
+               </image></ImageView>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <VBox fx:id="centerHbox" prefHeight="206.0" prefWidth="410.0" spacing="25.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="121.0" prefWidth="137.0">
+                            <children>
+                        <ImageView fx:id="reservationImage" fitHeight="76.0" fitWidth="85.0" onMouseReleased="#onReservervationImageClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Reservation.png" />
+                           </image>
+                        </ImageView>
+                                <Hyperlink fx:id="reservationHyperlink" onAction="#onReservationHyperlinkClick" prefHeight="23.0" prefWidth="128.0" text="Nouvelle réservation" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="121.0" prefWidth="187.0">
+                            <children>
+                                <ImageView fx:id="modificationImage" fitHeight="76.0" fitWidth="83.0" onMouseReleased="#onModificationImageClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Modification.png" />
+                           </image></ImageView>
+                                <Hyperlink fx:id="modificationHyperlink" onAction="#onModificationHyperlinkClick" text="Modification d'une réservation" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="85.0" prefWidth="144.0">
+                            <children>
+                                <ImageView fx:id="calendrierImage" fitHeight="81.0" fitWidth="73.0" onMouseReleased="#onCalendrierImageClick" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Calendrier.png" />
+                           </image></ImageView>
+                                <Hyperlink fx:id="calendrierHyperlink" onAction="#onCalendrierHyperlinkClick" prefHeight="23.0" prefWidth="153.0" text="Afficher une réservation" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

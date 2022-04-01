@@ -24,13 +24,13 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'com.example.tp_inf1034_implementation'
-    mainClass = 'com.example.tp_inf1034_implementation.HelloApplication'
+    mainModule = 'com.example.tp2_inf1034'
+    mainClass = 'com.example.tp2_inf1034.HelloApplication'
 }
 
 javafx {
     version = '17.0.1'
-    modules = ['javafx.controls', 'javafx.fxml', 'javafx.web']
+    modules = ['javafx.controls', 'javafx.fxml']
 }
 
 dependencies {
@@ -38,11 +38,7 @@ dependencies {
     implementation('com.dlsc.formsfx:formsfx-core:11.3.2') {
         exclude(group: 'org.openjfx')
     }
-    implementation('org.kordamp.ikonli:ikonli-javafx:12.2.0')
     implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
-    implementation('eu.hansolo:tilesfx:11.48') {
-        exclude(group: 'org.openjfx')
-    }
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
