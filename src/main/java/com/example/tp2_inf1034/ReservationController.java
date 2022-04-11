@@ -24,7 +24,7 @@ public class ReservationController {
         else {
             idMessage.setId("green");
             idMessage.setText("Réservation confirmée.");
-            Reservation.getReservationArrayList().add(new Reservation(idActivitee.getValue().toString(), idDate.getValue(), idPlage.getValue().toString()));
+           // Reservation.getReservationArrayList().add(new Reservation(idActivitee.getValue().toString(), idDate.getValue(), idPlage.getValue().toString()));
         }
         System.out.println(idActivitee.getValue());
         System.out.println(idDate.getValue());

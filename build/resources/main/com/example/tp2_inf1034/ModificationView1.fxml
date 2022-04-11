@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.tp2_inf1034.ModifReservation1Controller"
+            stylesheets="@../../../styles/modification.css">
+
+
+    <center>
+        <VBox alignment="CENTER" spacing="20.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+
+            <!--Le titrre de la page-->
+            <Label styleClass="titre">Modifier une réservation </Label>
+
+            <!--Les infos adresse a l'utilisateur-->
+            <VBox alignment="TOP_LEFT">
+                <padding>
+                    <Insets bottom="20.0" left="0" top="20.0" right="0"/>
+                </padding>
+
+                <Label fx:id="InfoUser"/>
+                <Label> Veuillez selectionner la réservation à modifier!</Label>
+                <Separator></Separator>
+                <Label></Label>
+                <Label>Réservations: </Label>
+                <ListView fx:id="listeReservation" onMouseClicked="#onOUVVRIRmodificationReservationClick"></ListView>
+
+            </VBox>
+
+            <Label fx:id="messageErreur"/>
+        </VBox>
+    </center>
+</BorderPane>

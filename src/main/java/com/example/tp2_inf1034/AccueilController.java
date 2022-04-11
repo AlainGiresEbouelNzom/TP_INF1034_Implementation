@@ -41,7 +41,7 @@ public class AccueilController implements Initializable {
     //Chaque pane contiendra une interface
     private Pane reservationPane;
     private Pane modificationPane;
-    private Pane calendrierPane;
+    private Pane ficheInformationPane;
 
 
     ArrayList<ImageView> imageViewArrayList;
@@ -64,13 +64,13 @@ public class AccueilController implements Initializable {
     }
 
     private void chargementFXML() throws IOException {
-        FXMLLoader reservationFXML = new FXMLLoader(MainApplication.class.getResource("GestionMontresView.fxml"));
-        FXMLLoader modificationFXML = new FXMLLoader(MainApplication.class.getResource(""));
-        FXMLLoader calendrierFXML = new FXMLLoader(MainApplication.class.getResource(""));
+        FXMLLoader reservationFXML = new FXMLLoader(MainApplication.class.getResource("Reservation.fxml"));
+        FXMLLoader modificationFXML = new FXMLLoader(MainApplication.class.getResource("ModificationView1.fxml"));
+        FXMLLoader ficheInformationsFXML = new FXMLLoader(MainApplication.class.getResource("FicheInformationsView.fxml"));
 
         reservationPane = reservationFXML.load();
-//        modificationPane = modificationFXML.load();
-//        calendrierPane = calendrierFXML.load();
+        modificationPane = modificationFXML.load();
+        ficheInformationPane = ficheInformationsFXML.load();
     }
 
     @FXML
@@ -116,7 +116,7 @@ public class AccueilController implements Initializable {
         else if (event.getSource() == modificationImage || event.getSource() == modificationHyperlink)
             racine.setCenter(modificationPane);
         else if (event.getSource() == calendrierImage || event.getSource() == calendrierHyperlink)
-            racine.setCenter(calendrierPane);
+            racine.setCenter(ficheInformationPane);
     }
 
     private void survolDesImages() {

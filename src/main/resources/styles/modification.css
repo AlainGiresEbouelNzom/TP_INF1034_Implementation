@@ -1,0 +1,73 @@
+/*
+ * Fenetre principale aura ces caractéristiques
+ * La propriété font-family ne sera pas héritée par tous les enfants
+ */
+#fenetre {
+    -fx-font-family: "Trebuchet MS";
+}
+/* Modification qui s'applique à tous les objet Label */
+Label {
+    -fx-font-size: 16pt;
+    -fx-text-alignment: left;
+    -fx-pref-width: 500px;
+    -fx-underline: false;
+    -fx-font-family: "Trebuchet MS";
+}
+
+/*
+ * S'applique à tous les boutons
+ */
+Button {
+    -fx-font-weight: bold;
+    -fx-font-size: 16pt;
+    -fx-font-family: "Trebuchet MS";
+}
+
+#enregistrer {
+    -fx-background-color: #669966; /*couleur verte*/
+}
+#enregistrer:hover {
+    -fx-background-color: #66bb66;
+}
+
+.titre {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Trebuchet MS";
+    -fx-fill: #333333;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+
+}
+
+
+ListView{
+    -fx-font-size: 14pt;
+    -fx-pref-width: 500px;
+    -fx-font-family: "Trebuchet MS";
+}
+
+/*  S'applique au bouton avec l'id Connexion */
+#reinitialiser {
+    -fx-background-color: #996666; /*couleur rouge*/
+}
+/* S'applique au bouton avec l'id Connexion lorsqu'il est survolé par la souris */
+#reinitialiser:hover {
+    -fx-background-color: #bb6666;
+}
+
+
+/*  S'applique au bouton avec l'id Connexion */
+#annuler {
+    -fx-background-color: #996666; /*couleur rouge*/
+}
+/* S'applique au bouton avec l'id Connexion lorsqu'il est survolé par la souris */
+#annuler:hover {
+    -fx-background-color: #bb6666;
+}
+
+#sauvegarder {
+    -fx-background-color: #669966; /*couleur verte*/
+}
+#sauvegarder:hover {
+    -fx-background-color: #66bb66;
+}

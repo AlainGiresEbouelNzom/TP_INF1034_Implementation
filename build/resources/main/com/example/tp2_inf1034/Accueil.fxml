@@ -17,7 +17,34 @@
                <image>
                   <Image url="@../../../images/accueil.png" />
                </image></ImageView>
+
             </children>
+            <children>
+
+                <fx:define>
+                    <ToggleGroup fx:id="theme" />
+                </fx:define>
+
+                <MenuBar AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
+                    <Menu text="_Fichier">
+                        <MenuItem text="_Sauvegarde" />
+                        <MenuItem text="_Quitter" />
+                    </Menu>
+                    <Menu text="_Options">
+                        <Menu text="_Commandes">
+                            <MenuItem text="_Mes réservations" />
+                            <MenuItem text="_Historique des reservations" />
+                            <MenuItem text="_Ajouter une réservation" />
+                        </Menu>
+                        <MenuItem text="_Information personnelles" />
+
+                    </Menu>
+                    <Menu text="_Aide">
+                        <MenuItem text="À _propos" />
+                    </Menu>
+                </MenuBar>
+            </children>
+
         </AnchorPane>
     </top>
     <center>

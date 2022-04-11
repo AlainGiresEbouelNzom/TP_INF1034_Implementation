@@ -5,46 +5,55 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Reservation {
-    private String activite;
-    private LocalDate date;
-    private String heure;
-    private static ArrayList<Reservation>reservationArrayList = new ArrayList<>();
 
-    public Reservation(String activite, LocalDate date, String heure) {
-        this.activite = activite;
+    private String date;
+    private String heure;
+    private String nomActivite;
+
+    public Reservation(String date, String heure, String nomActivite) {
         this.date = date;
         this.heure = heure;
+        this.nomActivite= nomActivite;
     }
 
-    public String getActivite() {
-        return activite;
+    public int getmin() {
+        String temp = String.valueOf(heure.charAt(3));
+        temp += String.valueOf(heure.charAt(4));
+        int min = Integer.parseInt(temp);
+        return min;
     }
 
-    public void setActivite(String activite) {
-        this.activite = activite;
+    public int getheure() {
+        String temp = String.valueOf(heure.charAt(0));
+        temp += String.valueOf(heure.charAt(1));
+        int h = Integer.parseInt(temp);
+        return h;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public String getNomActivite() {
+        return nomActivite;
     }
 
-    public String getHeure() {
-        return heure;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public void setHeure(String heure) {
         this.heure = heure;
     }
 
-    public static ArrayList<Reservation> getReservationArrayList() {
-        return reservationArrayList;
+    public void setNomActivite(String nomActivite) {
+        this.nomActivite = nomActivite;
     }
 
-    public static void setReservationArrayList(ArrayList<Reservation> reservationArrayList) {
-        Reservation.reservationArrayList = reservationArrayList;
+    @Override
+    public String toString() {
+        return  "Date = " + date +
+                "    | Heure = " + heure +
+                "h    | " + " Activité= " + nomActivite;
     }
 }
