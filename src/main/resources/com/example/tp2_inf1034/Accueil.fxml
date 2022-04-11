@@ -48,7 +48,7 @@
         </AnchorPane>
     </top>
     <center>
-        <VBox fx:id="centerHbox" prefHeight="206.0" prefWidth="410.0" spacing="25.0" BorderPane.alignment="CENTER">
+        <VBox fx:id="centerHbox" alignment="CENTER" prefHeight="206.0" prefWidth="410.0" spacing="50.0" BorderPane.alignment="CENTER">
             <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
@@ -75,13 +75,13 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <VBox alignment="CENTER" prefHeight="85.0" prefWidth="144.0">
+                        <VBox alignment="CENTER" prefHeight="96.0" prefWidth="228.0">
                             <children>
-                                <ImageView fx:id="calendrierImage" fitHeight="81.0" fitWidth="73.0" onMouseReleased="#onCalendrierImageClick" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="calendrierImage" fitHeight="86.0" fitWidth="112.0" onMouseReleased="#onCalendrierImageClick" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/Calendrier.png" />
+                              <Image url="@../../../images/notes-autocollantes.png" />
                            </image></ImageView>
-                                <Hyperlink fx:id="calendrierHyperlink" onAction="#onCalendrierHyperlinkClick" prefHeight="23.0" prefWidth="153.0" text="Afficher une réservation" />
+                                <Hyperlink fx:id="calendrierHyperlink" onAction="#onCalendrierHyperlinkClick" prefHeight="23.0" prefWidth="204.0" text="Fiche d'informations sur les activités" />
                             </children>
                         </VBox>
                     </children>
