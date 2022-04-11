@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="tpinf1034">
+    <output-path>$PROJECT_DIR$/out/artifacts/tpinf1034</output-path>
+    <root id="archive" name="tpinf1034.jar" />
+  </artifact>
+</component>
