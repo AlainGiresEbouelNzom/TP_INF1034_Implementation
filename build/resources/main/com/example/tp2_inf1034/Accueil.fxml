@@ -5,7 +5,8 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="BorderPain" fx:id="racine" stylesheets="@../../../styles/acceuil.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.AccueilController">
+<BorderPane id="BorderPain" fx:id="racine" stylesheets="@../../../styles/acceuil.css"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.AccueilController">
     <padding>
         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
     </padding>
