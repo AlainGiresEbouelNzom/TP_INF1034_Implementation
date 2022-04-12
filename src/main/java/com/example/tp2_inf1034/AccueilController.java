@@ -107,6 +107,11 @@ public class AccueilController implements Initializable {
     public void onCalendrierHyperlinkClick(ActionEvent actionEvent) {
         affichage(actionEvent);
     }
+    
+    @FXML
+    public void onExitMenuClick(ActionEvent actionEvent) {
+        System.exit(0);
+    }
 
     private void affichage(Event event) {
         if (event.getSource() == accueilImage)
@@ -130,5 +135,6 @@ public class AccueilController implements Initializable {
             img.setOnMouseExited(e -> img.setCursor(Cursor.DEFAULT));
         }
     }
+
 
 }

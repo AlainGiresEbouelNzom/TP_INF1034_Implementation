@@ -79,7 +79,7 @@
         </padding>
 
         <Button fx:id="reinitialiser" onMouseClicked="#reinitialiserChamps">Reinitialiser</Button>
-        <Button fx:id="enregistrer" onMouseClicked="#onModificationReservationClick">Enregistrer</Button>
+        <Button fx:id="enregistrer" onMouseClicked="#onSauvegarderBtnClick">Enregistrer</Button>
 
     </HBox>
     <Label fx:id="message1" />
