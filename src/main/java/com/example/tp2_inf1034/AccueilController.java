@@ -51,6 +51,7 @@ public class AccueilController implements Initializable {
 
         imageViewArrayList = new ArrayList<>();
     }
+    public void aa(){}
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
