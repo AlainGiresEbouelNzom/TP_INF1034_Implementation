@@ -119,30 +119,34 @@ public class ModifReservation2Controller {
     }
 
 
-    //Methode qui enregistre les modifications de l'utilisateur, dans le cas ou la validation s'est bien passe
+    //Methode qui enregistre les modifications de l'utilisateur
     @FXML
     public void onSauvegarderBtnClick(MouseEvent mouseEvent) throws IOException {
-        confirmationModification();
 
-        message1.setText("");
-        message2.setText("");
-        boolean action = validationChamps();
-        if (action == true) {
-            nouvelleREservation(initiale);
-            message1.setText("Les modifications ont été enrengistrés");
-            message1.setTextFill(Color.GREEN);
+        if (confirmationModification()) {
+
+            message1.setText("");
+            message2.setText("");
+            boolean action = validationChamps();
+            if (action == true) {
+                nouvelleREservation(initiale);
+                message1.setText("Les modifications ont été enrengistrés");
+                message1.setTextFill(Color.GREEN);
+            }
         }
         handleCloseButtonAction();
     }
 
-    private void confirmationModification() {
+    //Fenêtre de confirmation de modifications
+    private boolean confirmationModification() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setContentText("Cliquer sur OK pour confirmer la modification");
         alert.setHeaderText("");
-        alert.showAndWait();
+        String choice = alert.showAndWait().get().getButtonData().toString();
+        return choice.equalsIgnoreCase("OK_DONE");
     }
 
-    //Methode qui valide les champs de la page de modification
+    //Methode qui valide les champs de la fenêtre de modification
     public boolean validationChamps() {
         message1.setText("");
         message2.setText("");

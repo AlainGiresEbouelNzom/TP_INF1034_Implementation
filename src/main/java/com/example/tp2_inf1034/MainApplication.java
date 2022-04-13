@@ -15,7 +15,6 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Accueil.fxml"));
 
-        new GestionDesReservations();
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
         stage.setTitle("Gestion de réservations");

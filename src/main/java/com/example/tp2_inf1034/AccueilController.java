@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import models.GestionDesReservations;
 
 import java.io.IOException;
 import java.net.URL;
@@ -49,9 +50,10 @@ public class AccueilController implements Initializable {
 
     public AccueilController() {
 
+        new GestionDesReservations();
         imageViewArrayList = new ArrayList<>();
     }
-    public void aa(){}
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
