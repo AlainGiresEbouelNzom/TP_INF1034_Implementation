@@ -107,7 +107,9 @@ public class AccueilController implements Initializable {
     public void onCalendrierHyperlinkClick(ActionEvent actionEvent) {
         affichage(actionEvent);
     }
-    
+
+
+    //
     @FXML
     public void onExitMenuClick(ActionEvent actionEvent) {
         System.exit(0);
