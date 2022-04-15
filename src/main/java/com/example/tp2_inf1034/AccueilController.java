@@ -63,6 +63,7 @@ public class AccueilController implements Initializable {
             e.printStackTrace();
         }
         survolDesImages();
+        GestionDesReservations.setPointeurRacine(racine);
 
     }
 
