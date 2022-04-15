@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.collections.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane id="mainBorderpane" fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="538.0" stylesheets="@../../../styles/Reservation.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.ReservationController">
+<BorderPane id="mainBorderpane" fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="538.0" stylesheets="@../../../styles/Reservation.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.ReservationController">
    <top>
 
       <AnchorPane fx:id="top" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="538.0" BorderPane.alignment="CENTER">
@@ -48,16 +59,17 @@
             </padding>
 
             <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="96.0" text="Activité:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ChoiceBox fx:id="idActivitee" prefHeight="25.0" prefWidth="173.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ChoiceBox fx:id="idActivitee" value="Choisir une activitée..." prefHeight="25.0" prefWidth="173.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
 
                <items>
                   <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="Soccer" />
-                     <String fx:value="Natation" />
                      <String fx:value="Badminton" />
+                     <String fx:value="Soccer" />
+                     <String fx:value="Musculation" />
+                     <String fx:value="Tennis" />
                   </FXCollections>
                </items>
             </ChoiceBox>
@@ -68,7 +80,7 @@
             <DatePicker fx:id="idDate" prefHeight="30" prefWidth="173.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
             <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="80.0" text="Plage horraire:" translateY="5.0" GridPane.rowIndex="3" />
-            <ChoiceBox fx:id="idPlage" prefHeight="30" prefWidth="173.0" translateY="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ChoiceBox fx:id="idPlage" value="Choisir une heure..." prefHeight="30" prefWidth="173.0" translateY="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="11H" />
@@ -92,9 +104,20 @@
                <RowConstraints />
             </rowConstraints>
          </GridPane>
-
-         <Button onMouseClicked="#onClickConfirmer" prefHeight="32.0" prefWidth="100.0" text="Confirmer" translateY="30.0" />
-         <Button mnemonicParsing="false" onMouseClicked="#onClickAnnuler" text="Annuler" translateY="30.0" />
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+      
+               <Button onMouseClicked="#onClickConfirmer" id="enregistrer" prefHeight="20.0" prefWidth="88.0" text="Confirmer">
+                  <HBox.margin>
+                     <Insets right="5.0" />
+                  </HBox.margin>
+               </Button>
+               <Button mnemonicParsing="false" id="reinitialiser" onMouseClicked="#onClickAnnuler" text="Annuler" />
+            </children>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+         </HBox>
          <Label fx:id="idMessage" text="" translateY="40.0" />
 
 

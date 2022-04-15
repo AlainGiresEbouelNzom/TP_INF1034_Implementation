@@ -4,3 +4,20 @@
 #red{
     -fx-text-fill: red;
 }
+
+#enregistrer {
+    -fx-background-color: #669966;
+    -fx-font-size: 1.2em;
+}
+#enregistrer:hover {
+    -fx-background-color: #66bb66;
+}
+
+#reinitialiser {
+    -fx-background-color: #996666;
+    -fx-font-size: 1.2em;
+}
+
+#reinitialiser:hover {
+    -fx-background-color: #bb6666;
+}
