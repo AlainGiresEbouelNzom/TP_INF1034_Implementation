@@ -54,6 +54,6 @@ public class Reservation {
     public String toString() {
         return  "Date = " + date +
                 "    | Heure = " + heure +
-                "h    | " + " Activité= " + nomActivite;
+                "h    | " + " Activité = " + nomActivite;
     }
 }

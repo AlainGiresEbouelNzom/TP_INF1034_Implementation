@@ -3,15 +3,26 @@
  * La propriété font-family ne sera pas héritée par tous les enfants
  */
 #fenetre {
-    -fx-font-family: "Trebuchet MS";
+
+}
+.modificationClass{
+    -fx-font-size: 14pt;
+}
+#mainBorderPane{
+    -fx-font-size: 14pt;
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+
 }
 /* Modification qui s'applique à tous les objet Label */
 Label {
-    -fx-font-size: 16pt;
+
     -fx-text-alignment: left;
     -fx-pref-width: 500px;
     -fx-underline: false;
-    -fx-font-family: "Trebuchet MS";
+
 }
 
 /*
@@ -19,8 +30,6 @@ Label {
  */
 Button {
     -fx-font-weight: bold;
-    -fx-font-size: 16pt;
-    -fx-font-family: "Trebuchet MS";
 }
 
 #enregistrer {
@@ -32,18 +41,15 @@ Button {
 
 .titre {
     -fx-font-size: 20pt;
-    -fx-font-family: "Trebuchet MS";
     -fx-fill: #333333;
     -fx-alignment: center;
     -fx-font-weight: bold;
-
 }
 
 
 ListView{
     -fx-font-size: 14pt;
     -fx-pref-width: 500px;
-    -fx-font-family: "Trebuchet MS";
 }
 
 /*  S'applique au bouton avec l'id Connexion */

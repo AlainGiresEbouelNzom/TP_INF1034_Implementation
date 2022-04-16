@@ -2,7 +2,9 @@ package com.example.tp2_inf1034;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import models.GestionDesReservations;
 
 public class FicheInformations {
     @FXML
@@ -48,7 +50,7 @@ public class FicheInformations {
         if (retroactionSalle.getText().isEmpty()) {
             if (retroactionBad.getText().isEmpty()&&retroactionSoccer.getText().isEmpty()&&retroactionTenis.getText().isEmpty()){
                 retroactionSalle.setText(salle);
-
+                GestionDesReservations.setReservationOnCenter();
             }
             else {
                 retroactionTenis.setText("");

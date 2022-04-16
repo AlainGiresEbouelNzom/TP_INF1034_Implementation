@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.control.cell.TextFieldTableCell?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.tp2_inf1034.FicheInformations" stylesheets="@../../../styles/acceuil.css">
+<VBox id="informationVbox" alignment="CENTER" spacing="20.0" styleClass="acceuilClass" stylesheets="@../../../styles/acceuil.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.FicheInformations">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
 
     <GridPane hgap="10" vgap="10">
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="Salle de Musculation"/>
-        <Button GridPane.columnIndex="1" GridPane.rowIndex="0" text="Plus d'infos" onAction="#onSalle"/>
-        <Text GridPane.columnIndex="0" GridPane.rowIndex="1" fx:id="retroactionSalle"/>
+        <Label text="Salle de Musculation" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button onAction="#onSalle" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Text fx:id="retroactionSalle" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Soccer"/>
-        <Button GridPane.columnIndex="1" GridPane.rowIndex="2" text="Plus d'infos" onAction="#onSoccer"/>
-        <Text  GridPane.columnIndex="0" GridPane.rowIndex="3" fx:id="retroactionSoccer"/>
+        <Label text="Soccer" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Button onAction="#onSoccer" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Text fx:id="retroactionSoccer" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="3" />
 
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="Badminton"/>
-        <Button GridPane.columnIndex="1" GridPane.rowIndex="4" text="Plus d'infos" onAction="#onBad"/>
-        <Text GridPane.columnIndex="0" GridPane.rowIndex="5" fx:id="retroactionBad"/>
+        <Label text="Badminton" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Button onAction="#onBad" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Text fx:id="retroactionBad" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="5" />
 
-        <Label GridPane.columnIndex="0" GridPane.rowIndex="6" text="Tenis"/>
-        <Button GridPane.columnIndex="1" GridPane.rowIndex="6" text="Plus d'infos" onAction="#onTenis"/>
-        <Text GridPane.columnIndex="0" GridPane.rowIndex="7" fx:id="retroactionTenis"/>
+        <Label text="Tenis" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Button onAction="#onTenis" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Text fx:id="retroactionTenis" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
 
     </GridPane>
 

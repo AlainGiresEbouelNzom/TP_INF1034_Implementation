@@ -1,13 +1,29 @@
 package models;
 
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 
 public class GestionDesReservations {
 
     private static ArrayList<Reservation> reservationArrayList = new ArrayList<>();
-    private static BorderPane pointeurRacine;
+    private static BorderPane acceuilBorderPane;
+    private static Pane reservationPane;
+
+
+    public static void setAcceuilBorderPane(BorderPane acceuilBorderPane) {
+        GestionDesReservations.acceuilBorderPane = acceuilBorderPane;
+    }
+
+    public static void setReservationPane(Pane reservationPane) {
+        GestionDesReservations.reservationPane = reservationPane;
+    }
+
+    //Positionne l'interface Nouvelle Reservation
+    public static void setReservationOnCenter(){
+        acceuilBorderPane.setCenter(reservationPane);
+    }
 
     //Liste de reservations
     public GestionDesReservations() {
@@ -15,10 +31,6 @@ public class GestionDesReservations {
         reservationArrayList.add(new Reservation("2022-06-03", "12:45", "Musculation"));
         reservationArrayList.add(new Reservation("2022-06-04", "15:00", "Soccer"));
         reservationArrayList.add(new Reservation("2022-06-07", "15:00", "Tennis"));
-    }
-
-    public static void setPointeurRacine(BorderPane racine) {
-        GestionDesReservations.pointeurRacine = racine;
     }
 
     public static ArrayList<Reservation> getReservationArrayList() {

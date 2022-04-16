@@ -35,7 +35,7 @@ public class ModifReservation1Controller {
     @FXML
     protected void initialize() {
         Client clientActuel = new Client("Marc");
-        InfoUser.setText(String.format("Bienvenu %s,", clientActuel.getNom()));
+      //  InfoUser.setText(String.format("Bienvenu %s,", clientActuel.getNom()));
 
         //Peuplement de la liste des reservation
         listeReservation.getItems().addAll(reservation);

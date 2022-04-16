@@ -5,7 +5,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="BorderPain" fx:id="racine" stylesheets="@../../../styles/acceuil.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.AccueilController">
+<BorderPane id="BorderPain" fx:id="racine" prefHeight="329.0" prefWidth="520.0" stylesheets="@../../../styles/acceuil.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.AccueilController">
     <padding>
         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
     </padding>
@@ -13,7 +13,7 @@
     <top>
         <AnchorPane prefHeight="37.0" prefWidth="274.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="accueilImage" fitHeight="19.0" fitWidth="200.0" onMouseReleased="#onImageAccueilClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                <ImageView fx:id="accueilImage" fitHeight="19.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@../../../images/accueil.png" />
                </image></ImageView>
@@ -27,16 +27,16 @@
 
                 <MenuBar AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
                     <Menu text="_Fichier">
-                        <MenuItem text="_Sauvegarde" />
+                        <MenuItem text="_Sauvegarder" />
                         <MenuItem onAction="#onExitMenuClick" text="_Quitter" />
                     </Menu>
                     <Menu text="_Options">
-                        <Menu text="_Commandes">
-                            <MenuItem text="_Mes réservations" />
-                            <MenuItem text="_Historique des reservations" />
-                            <MenuItem text="_Ajouter une réservation" />
+                        <Menu text="_Affichage">
+                            <MenuItem fx:id="reservationMenuItem" text="Nouvelle réservation" />
+                            <MenuItem fx:id="modifReservationMenuItem" text="_Modification d'une réservation" />
+                            <MenuItem fx:id="informationMenuItem" text="Informations sur les activités" />
                         </Menu>
-                        <MenuItem text="_Information personnelles" />
+                        <MenuItem fx:id="historiqueMenuItem" onAction="#onHistoriqueClick" text="Historique des réservations" />
 
                     </Menu>
                     <Menu text="_Aide">
@@ -52,41 +52,44 @@
             <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <VBox alignment="CENTER" prefHeight="121.0" prefWidth="137.0">
+                        <VBox alignment="CENTER" prefHeight="111.0" prefWidth="228.0">
                             <children>
-                        <ImageView fx:id="reservationImage" fitHeight="76.0" fitWidth="85.0" onMouseReleased="#onReservervationImageClick" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="reservationImage" fitHeight="76.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../images/Reservation.png" />
                            </image>
                         </ImageView>
-                                <Hyperlink fx:id="reservationHyperlink" onAction="#onReservationHyperlinkClick" prefHeight="23.0" prefWidth="128.0" text="Nouvelle réservation" />
+                                <Hyperlink fx:id="reservationHyperlink" prefHeight="35.0" prefWidth="253.0" text="Nouvelle réservation" />
                             </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="121.0" prefWidth="187.0">
+                        <VBox alignment="CENTER" prefHeight="111.0" prefWidth="329.0">
                             <children>
-                                <ImageView fx:id="modificationImage" fitHeight="76.0" fitWidth="83.0" onMouseReleased="#onModificationImageClick" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="modificationImage" fitHeight="76.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../images/Modification.png" />
                            </image></ImageView>
-                                <Hyperlink fx:id="modificationHyperlink" onAction="#onModificationHyperlinkClick" text="Modification d'une réservation" />
+                                <Hyperlink fx:id="modificationHyperlink" prefHeight="35.0" prefWidth="267.0" text="Modification d'une réservation" />
                             </children>
                         </VBox>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <VBox alignment="CENTER" prefHeight="96.0" prefWidth="228.0">
+                        <VBox alignment="CENTER" prefHeight="121.0" prefWidth="285.0">
                             <children>
-                                <ImageView fx:id="calendrierImage" fitHeight="86.0" fitWidth="112.0" onMouseReleased="#onCalendrierImageClick" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="informationsImage" fitHeight="86.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../images/notes-autocollantes.png" />
                            </image></ImageView>
-                                <Hyperlink fx:id="calendrierHyperlink" onAction="#onCalendrierHyperlinkClick" prefHeight="23.0" prefWidth="204.0" text="Fiche d'informations sur les activités" />
+                                <Hyperlink fx:id="informationHyperlink" prefHeight="35.0" prefWidth="247.0" text="Informations sur les activités" />
                             </children>
                         </VBox>
                     </children>
                 </HBox>
             </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
         </VBox>
     </center>
 </BorderPane>
