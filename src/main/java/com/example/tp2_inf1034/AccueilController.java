@@ -51,6 +51,8 @@ public class AccueilController implements Initializable {
     public MenuItem informationMenuItem;
     @FXML
     public MenuItem historiqueMenuItem;
+    @FXML
+   
 
     //Chaque pane contiendra une interface à afficher
     private Pane reservationPane;
@@ -91,6 +93,7 @@ public class AccueilController implements Initializable {
     }
 
     //Affichage de l'historique des réservations
+    @FXML
     public void onHistoriqueClick(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         StringBuilder historique = new StringBuilder();
@@ -110,6 +113,15 @@ public class AccueilController implements Initializable {
         alert.setHeaderText("");
         alert.show();
 
+    }
+    //Sauvegarde des réservations dans un fichier
+    @FXML
+    public void onSauvegarderClick(ActionEvent actionEvent) {
+
+    }
+    //Chargement des réservations à partir du fichier de sauvegarde
+    @FXML
+    public void onChargerClick(ActionEvent actionEvent) {
     }
 
     //Peuplement des listes

@@ -39,7 +39,7 @@
    <center>
 
 
-      <VBox id="centerBorderPane" alignment="TOP_CENTER" prefHeight="581.0" prefWidth="676.0" spacing="5.0">
+      <VBox id="centerBorderPane" alignment="TOP_CENTER" prefHeight="581.0" prefWidth="553.0" spacing="5.0">
          <GridPane styleClass="bordure">
 
             <padding>

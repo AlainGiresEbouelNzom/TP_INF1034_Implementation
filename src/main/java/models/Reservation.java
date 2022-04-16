@@ -1,10 +1,11 @@
 package models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Reservation {
+public class Reservation implements Serializable {
 
     private String date;
     private String heure;
