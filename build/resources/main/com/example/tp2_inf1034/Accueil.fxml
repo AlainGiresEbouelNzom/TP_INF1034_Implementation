@@ -27,7 +27,8 @@
 
                 <MenuBar AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
                     <Menu text="_Fichier">
-                        <MenuItem text="_Sauvegarder" />
+                        <MenuItem fx:id="sauvergaderReservations" onAction="#onSauvegarderClick" text="_Sauvegarder" />
+                  <MenuItem fx:id="chargerReservations" onAction="#onChargerClick" text="Charger" />
                         <MenuItem onAction="#onExitMenuClick" text="_Quitter" />
                     </Menu>
                     <Menu text="_Options">

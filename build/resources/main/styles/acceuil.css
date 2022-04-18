@@ -3,7 +3,7 @@
     -fx-text-fill: black;
 }
 
-#centerHbox, #informationVbox{
+#centerHbox{
     -fx-font-size: 14pt;
     -fx-border-style: solid;
     -fx-border-color: black;

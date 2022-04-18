@@ -2,46 +2,68 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="informationVbox" alignment="CENTER" spacing="20.0" styleClass="acceuilClass" stylesheets="@../../../styles/acceuil.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.FicheInformations">
+<BorderPane id="informationVbox" styleClass="acceuilClass" stylesheets="@../../../styles/informations.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.FicheInformations">
+
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+<top>
 
+    <AnchorPane prefHeight="45.0" prefWidth="540.0" BorderPane.alignment="CENTER">
+        <children>
 
-    <GridPane hgap="10" vgap="10">
-        <Label text="Salle de Musculation" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <Button onAction="#onSalle" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <Text fx:id="retroactionSalle" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <!--Le titrre de la page-->
+            <Label layoutX="141.0" prefHeight="27.0" prefWidth="270.0" styleClass="titre" text="Informations sur les activités" AnchorPane.leftAnchor="141.0" AnchorPane.topAnchor="50.0">Modifier une réservation </Label>
+            <ImageView fitHeight="128.0" fitWidth="132.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0">
+                <image>
+                    <Image url="@../../../images/notes-autocollantes.png" />
+                </image>
+            </ImageView>
+        </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+    </AnchorPane>
+</top>
 
-        <Label text="Soccer" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <Button onAction="#onSoccer" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <Text fx:id="retroactionSoccer" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <center>
 
-        <Label text="Badminton" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <Button onAction="#onBad" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-        <Text fx:id="retroactionBad" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <GridPane hgap="10" vgap="10">
+            <Label text="Musculation" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button fx:id="musculationBtn" onAction="#onMusculation" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Text fx:id="retroactionSalle" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-        <Label text="Tenis" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-        <Button onAction="#onTenis" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-        <Text fx:id="retroactionTenis" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-      <columnConstraints>
-         <ColumnConstraints />
-         <ColumnConstraints />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-      </rowConstraints>
+            <Label text="Soccer" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Button fx:id="soccerBtn" onAction="#onSoccer" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Text fx:id="retroactionSoccer" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="3" />
 
-    </GridPane>
+            <Label text="Badminton" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Button fx:id="badmintonBtn" onAction="#onBadminton" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Text fx:id="retroactionBad" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="5" />
 
-</VBox>
+            <Label text="Tenis" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Button fx:id="tenisBtn" onAction="#onTenis" text="Plus d'infos" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Text fx:id="retroactionTenis" styleClass="textClass" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+
+        </GridPane>
+    </center>
+
+</BorderPane>

@@ -1,5 +1,6 @@
 package models;
 
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
@@ -10,18 +11,26 @@ public class GestionDesReservations {
     private static ArrayList<Reservation> reservationArrayList = new ArrayList<>();
     private static BorderPane acceuilBorderPane;
     private static Pane reservationPane;
+    private static ChoiceBox choiceBoxActivite;
 
-
+    //Connexion avec la BorderPane de l'nterface Accueil
     public static void setAcceuilBorderPane(BorderPane acceuilBorderPane) {
         GestionDesReservations.acceuilBorderPane = acceuilBorderPane;
     }
-
-    public static void setReservationPane(Pane reservationPane) {
+    //Connexion avec la Pane Reservation, dans AccueilController
+    public static void SetReservationPane(Pane reservationPane) {
         GestionDesReservations.reservationPane = reservationPane;
     }
 
+    //Connexion avec la ChoiceBox de l'interface Reservation
+    public static void connectWithChoiceBoxActivite(ChoiceBox choiceBoxActivite)
+    {
+        GestionDesReservations.choiceBoxActivite = choiceBoxActivite;
+    }
+
     //Positionne l'interface Nouvelle Reservation
-    public static void setReservationOnCenter(){
+    public static void setReservationOnCenter(String activite){
+        choiceBoxActivite.setValue(activite);
         acceuilBorderPane.setCenter(reservationPane);
     }
 

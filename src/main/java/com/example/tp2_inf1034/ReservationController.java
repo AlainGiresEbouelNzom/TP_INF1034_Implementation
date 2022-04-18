@@ -1,6 +1,7 @@
 package com.example.tp2_inf1034;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -8,9 +9,11 @@ import javafx.scene.input.MouseEvent;
 import models.GestionDesReservations;
 import models.Reservation;
 
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class ReservationController {
+public class ReservationController implements Initializable {
     @FXML
     private ChoiceBox idActivitee, idPlage;
     @FXML
@@ -18,6 +21,11 @@ public class ReservationController {
     @FXML
     private Label idMessage;
     private LocalDate nextYear = LocalDate.of(2023, 1, 1);
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        GestionDesReservations.connectWithChoiceBoxActivite(idActivitee);
+    }
 
     public void onClickConfirmer(MouseEvent mouseEvent) {
 
@@ -45,5 +53,8 @@ public class ReservationController {
         idPlage.setValue("Choisir une heure...");
 
         idMessage.setText(null);
+
     }
+
+
 }

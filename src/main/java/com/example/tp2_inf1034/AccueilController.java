@@ -14,8 +14,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import models.GestionDesReservations;
 import models.Reservation;
 
@@ -52,7 +50,7 @@ public class AccueilController implements Initializable {
     @FXML
     public MenuItem historiqueMenuItem;
     @FXML
-   
+
 
     //Chaque pane contiendra une interface à afficher
     private Pane reservationPane;
@@ -82,7 +80,7 @@ public class AccueilController implements Initializable {
         chargementArraylist();
         regroupementDesEvents();
         survolDesImages();
-        GestionDesReservations.setReservationPane(reservationPane);
+        GestionDesReservations.SetReservationPane(reservationPane);
         GestionDesReservations.setAcceuilBorderPane(racine);
     }
 
