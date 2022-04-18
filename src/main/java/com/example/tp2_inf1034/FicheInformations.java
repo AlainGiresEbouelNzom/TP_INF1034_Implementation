@@ -75,7 +75,7 @@ public class FicheInformations implements Initializable {
         buttonArrayList.add(tenisBtn);
         setButtonEvents();
     }
-
+//Regroupement des évènements des bouttons
     private void setButtonEvents() {
         for (Button btn : buttonArrayList) {
             btn.setOnAction(e -> {
