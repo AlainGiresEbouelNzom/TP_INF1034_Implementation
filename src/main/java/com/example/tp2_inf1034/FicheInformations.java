@@ -12,6 +12,7 @@ import models.GestionDesReservations;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -98,6 +99,7 @@ public class FicheInformations implements Initializable {
         ButtonType fermerBtn = new ButtonType("Fermer", ButtonBar.ButtonData.CANCEL_CLOSE);
 
         Alert fenetre = new Alert(Alert.AlertType.CONFIRMATION, text, reserverBtn, fermerBtn);
+        fenetre.getDialogPane().setStyle("-fx-font-size: 12pt");
 
         fenetre.setTitle(activite);
         fenetre.setHeaderText("");
