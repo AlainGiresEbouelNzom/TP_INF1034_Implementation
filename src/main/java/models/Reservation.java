@@ -10,11 +10,13 @@ public class Reservation implements Serializable {
     private String date;
     private String heure;
     private String nomActivite;
+    private final int ID;
 
     public Reservation(String date, String heure, String nomActivite) {
         this.date = date;
         this.heure = heure;
         this.nomActivite= nomActivite;
+        this.ID = GestionDesReservations.getId();
     }
 
     public int getmin() {
@@ -29,6 +31,10 @@ public class Reservation implements Serializable {
         temp += String.valueOf(heure.charAt(1));
         int h = Integer.parseInt(temp);
         return h;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public String getDate() {

@@ -12,6 +12,11 @@ public class GestionDesReservations {
     private static BorderPane acceuilBorderPane;
     private static Pane reservationPane;
     private static ChoiceBox choiceBoxActivite;
+    private static int countId = 0;
+
+    public static int getId() {
+       return GestionDesReservations.countId++;
+    }
 
     //Connexion avec la BorderPane de l'nterface Accueil
     public static void setAcceuilBorderPane(BorderPane acceuilBorderPane) {

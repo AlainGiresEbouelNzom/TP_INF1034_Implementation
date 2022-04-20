@@ -1,6 +1,7 @@
 package com.example.tp2_inf1034;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,11 +18,12 @@ import java.util.ArrayList;
 
 public class ModifReservation2Controller {
 
+    @FXML
     public Button reinitialiser;
+    @FXML
     public VBox fenetre;
-    private Reservation initiale;
-
-    private ArrayList sauvegarde;
+    @FXML
+    public Button supprimerBtn;
 
     @FXML
     private DatePicker modif_date;
@@ -43,6 +45,10 @@ public class ModifReservation2Controller {
 
     @FXML
     private Label message2;
+
+    private Reservation initiale;
+
+    private ArrayList sauvegarde;
 
     @FXML
     private void reinitialiserChamps() {
@@ -106,6 +112,8 @@ public class ModifReservation2Controller {
         stage.close();
     }
 
+    public void onSupprimerBtnClick(ActionEvent actionEvent) {
+    }
 
     // Methode qui ouvre la fenêtre de confirmation
     @FXML

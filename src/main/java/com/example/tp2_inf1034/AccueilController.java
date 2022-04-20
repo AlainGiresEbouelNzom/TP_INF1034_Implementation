@@ -50,6 +50,8 @@ public class AccueilController implements Initializable {
     @FXML
     public MenuItem historiqueMenuItem;
     @FXML
+    public MenuItem aProposMenuItem;
+    @FXML
 
 
     //Chaque pane contiendra une interface à afficher
@@ -82,6 +84,9 @@ public class AccueilController implements Initializable {
         survolDesImages();
         GestionDesReservations.SetReservationPane(reservationPane);
         GestionDesReservations.setAcceuilBorderPane(racine);
+        aProposMenuItem.setText("******APPLICATION DE RÉSERVATION D'ACTIVITÉS SPORTIVES****\nVous pouvez créer de nouvelles réservations, " +
+                "les consuter,les modifier et même les supprimer.\n" +
+                "Il est aussi possible de consulter une description détaillée des différentes activités proposées.");
     }
 
     //Arrêt du programme
@@ -120,6 +125,11 @@ public class AccueilController implements Initializable {
     //Chargement des réservations à partir du fichier de sauvegarde
     @FXML
     public void onChargerClick(ActionEvent actionEvent) {
+    }
+
+    public void onA_ProposMenuItemClick(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, aProposMenuItem.getText());
+      alert.show();
     }
 
     //Peuplement des listes

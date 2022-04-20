@@ -64,16 +64,22 @@ ListView{
 
 /*  S'applique au bouton avec l'id Connexion */
 #annuler {
-    -fx-background-color: #996666; /*couleur rouge*/
+    -fx-background-color: #a17d7d; /*couleur rouge*/
 }
 /* S'applique au bouton avec l'id Connexion lorsqu'il est survolé par la souris */
 #annuler:hover {
-    -fx-background-color: #bb6666;
+    -fx-background-color: #b95151;
 }
 
 #sauvegarder {
-    -fx-background-color: #669966; /*couleur verte*/
+    -fx-background-color: #779d77; /*couleur verte*/
 }
 #sauvegarder:hover {
-    -fx-background-color: #66bb66;
+    -fx-background-color: #43b743;
+}
+#supprimerBtn{
+    -fx-background-color: #e72b42;
+}
+#supprimerBtn:hover{
+    -fx-background-color: #fa0214;
 }

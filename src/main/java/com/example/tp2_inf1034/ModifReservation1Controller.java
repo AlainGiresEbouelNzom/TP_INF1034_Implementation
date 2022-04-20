@@ -45,7 +45,7 @@ public class ModifReservation1Controller {
     protected void onOUVVRIRmodificationReservationClick() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ModificationView2.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 500, 440);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 440);
         Stage stage = new Stage();
         stage.setTitle("Modification Reservation");
         stage.setScene(scene);

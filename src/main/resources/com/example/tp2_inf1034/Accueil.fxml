@@ -41,7 +41,7 @@
 
                     </Menu>
                     <Menu text="_Aide">
-                        <MenuItem text="À _propos" />
+                        <MenuItem fx:id="aProposMenuItem" onAction="#onA_ProposMenuItemClick" text="À _propos" />
                     </Menu>
                 </MenuBar>
             </children>
