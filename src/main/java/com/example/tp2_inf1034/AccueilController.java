@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
@@ -17,9 +18,10 @@ import javafx.scene.layout.VBox;
 import models.GestionDesReservations;
 import models.Reservation;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AccueilController implements Initializable {
@@ -64,7 +66,7 @@ public class AccueilController implements Initializable {
     ArrayList<MenuItem> menuItemArrayList;
 
 
-    public AccueilController() {
+    public AccueilController() throws IOException, ClassNotFoundException {
 
         new GestionDesReservations();
         imageViewArrayList = new ArrayList<>();
@@ -119,12 +121,22 @@ public class AccueilController implements Initializable {
     }
     //Sauvegarde des réservations dans un fichier
     @FXML
-    public void onSauvegarderClick(ActionEvent actionEvent) {
+    public void onSauvegarderClick(ActionEvent actionEvent) throws IOException {
+        FileOutputStream fos = new FileOutputStream("Sauvegarde.txt");
+        ObjectOutputStream out = new ObjectOutputStream(fos);
+        out.writeObject(GestionDesReservations.getReservationArrayList());
+        out.close();
+        fos.close();
 
     }
     //Chargement des réservations à partir du fichier de sauvegarde
     @FXML
-    public void onChargerClick(ActionEvent actionEvent) {
+    public void onChargerClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText("Attention! Toutes les réservations non sauvegardées seront perdues");
+
+      if(alert.showAndWait().get().getButtonData().toString().equalsIgnoreCase("OK_DONE"))
+        GestionDesReservations.chargerReservation();
     }
 
     public void onA_ProposMenuItemClick(ActionEvent actionEvent) {

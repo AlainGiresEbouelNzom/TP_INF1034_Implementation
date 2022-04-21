@@ -4,6 +4,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class GestionDesReservations {
@@ -12,10 +15,11 @@ public class GestionDesReservations {
     private static BorderPane acceuilBorderPane;
     private static Pane reservationPane;
     private static ChoiceBox choiceBoxActivite;
-    private static int countId = 0;
+    private static boolean statutSauvegarde;
 
-    public static int getId() {
-       return GestionDesReservations.countId++;
+
+    public GestionDesReservations() throws IOException, ClassNotFoundException {
+        chargerReservation();
     }
 
     //Connexion avec la BorderPane de l'nterface Accueil
@@ -39,30 +43,17 @@ public class GestionDesReservations {
         acceuilBorderPane.setCenter(reservationPane);
     }
 
-    //Liste de reservations
-    public GestionDesReservations() {
-        reservationArrayList.add(new Reservation("2022-06-01", "20:15", "Badminton"));
-        reservationArrayList.add(new Reservation("2022-06-03", "12:45", "Musculation"));
-        reservationArrayList.add(new Reservation("2022-06-04", "15:00", "Soccer"));
-        reservationArrayList.add(new Reservation("2022-06-07", "15:00", "Tennis"));
-    }
+
 
     public static ArrayList<Reservation> getReservationArrayList() {
         return reservationArrayList;
     }
 
-    public ArrayList<Reservation> removeR(Reservation r1) {
-        for (int i = 0; i < reservationArrayList.size(); i++) {
-            if (r1.equals(reservationArrayList.get(i))) {
-                reservationArrayList.remove(i);
-            }
-        }
-        return reservationArrayList;
-    }
-
-    public ArrayList<Reservation> addR(Reservation r1) {
-        reservationArrayList.add(r1);
-        return reservationArrayList;
+    //Chargement de la liste des réservations à partir du fichier de sauvegarde
+    public static void chargerReservation() throws IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream("sauvegarde.txt");
+        ObjectInputStream input =  new ObjectInputStream(fis);
+        reservationArrayList = (ArrayList<Reservation>) input.readObject();
     }
 
 }

@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import models.GestionDesReservations;
 import models.Reservation;
 
 import java.io.IOException;
@@ -113,6 +114,8 @@ public class ModifReservation2Controller {
     }
 
     public void onSupprimerBtnClick(ActionEvent actionEvent) {
+       GestionDesReservations.getReservationArrayList().remove(initiale);
+       handleCloseButtonAction();
     }
 
     // Methode qui ouvre la fenêtre de confirmation
