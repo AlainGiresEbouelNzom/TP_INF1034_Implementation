@@ -16,20 +16,11 @@ public class Reservation implements Serializable {
         this.heure = heure;
         this.nomActivite= nomActivite;
     }
-
-    public int getmin() {
-      
-        String temp = String.valueOf(heure.charAt(3));
-        temp += String.valueOf(heure.charAt(4));
-        int min = Integer.parseInt(temp);
-        return min;
+    public String getmin() {
+        return heure.substring(3,5);
     }
-
-    public int getheure() {
-        String temp = String.valueOf(heure.charAt(0));
-        temp += String.valueOf(heure.charAt(1));
-        int h = Integer.parseInt(temp);
-        return h;
+    public String getheure() {
+        return heure.substring(0,2);
     }
 
     public String getDate() {

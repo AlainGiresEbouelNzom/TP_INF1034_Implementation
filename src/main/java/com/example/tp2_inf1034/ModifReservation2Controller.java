@@ -85,19 +85,19 @@ public class ModifReservation2Controller {
         initiale = r1;
 
         String date = initiale.getDate();
-        LocalDate localDate = LocalDate.parse(date); System.out.println("test2= " );
-        modif_date.setValue(localDate);System.out.println("test1= " );
+        LocalDate localDate = LocalDate.parse(date);
+        modif_date.setValue(localDate);
         min.setValue(initiale.getmin());
-        heure.setValue(initiale.getheure()); System.out.println("test3= " );
+        heure.setValue(initiale.getheure());
         activite.setValue(initiale.getNomActivite());
     }
 
     public void nouvelleREservation(Reservation NewReservation) {
         NewReservation.setDate(modif_date.getValue().toString());
 
-        String heureA = (String)heure.getValue();
-        String minutes = (String)min.getValue();
-        String temps = heureA + ":" + minutes;
+        String heureA = heure.getValue().toString();
+        String minutes = min.getValue().toString();
+        String temps = heureA + "H" + minutes;
 
 
         String activitee = (String) activite.getValue();

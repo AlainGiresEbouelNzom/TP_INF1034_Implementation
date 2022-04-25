@@ -24,7 +24,7 @@
     <HBox>
       <AnchorPane prefHeight="0.0" prefWidth="460.0">
          <children>
-               <ChoiceBox fx:id="min" prefHeight="39.0" prefWidth="230.0" value="MM" AnchorPane.leftAnchor="100.0">
+               <ChoiceBox fx:id="min" prefHeight="39.0" prefWidth="230.0" value="MM" AnchorPane.leftAnchor="335.0">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
                            <String fx:value="00" />
@@ -34,7 +34,8 @@
                        </FXCollections>
                    </items>
                </ChoiceBox>
-               <ChoiceBox fx:id="heure" prefHeight="39.0" prefWidth="220.0" value="HH" AnchorPane.leftAnchor="335.0">
+              <Label>L'heure :</Label>
+               <ChoiceBox fx:id="heure" prefHeight="39.0" prefWidth="220.0" value="HH" AnchorPane.leftAnchor="100.0">
                    <items>
                        <FXCollections fx:factory="observableArrayList">
                            <String fx:value="05" />
@@ -57,7 +58,6 @@
                        </FXCollections>
                    </items>
                </ChoiceBox>
-              <Label>L'heure :</Label>
          </children>
       </AnchorPane>
 

@@ -23,7 +23,7 @@ public class GestionDesReservations {
 
     public GestionDesReservations() throws IOException, ClassNotFoundException {
         chargerReservation();
-        reservationArrayList.add(new Reservation("2022-06-05", "15H00", "Soccer"));
+        reservationArrayList.add(new Reservation("2022-06-05", "15H15", "Soccer"));
     }
 
     //Connexion avec la BorderPane de l'nterface Accueil
