@@ -79,18 +79,17 @@ public class ModifReservation2Controller {
     }
      */
 
-    public void initializeData(Reservation r1) throws IOException {
+    public void initializeData(Reservation r1)  {
         //Pour que l'utilisateur puisse voir les information du bouton qu'il a clique
         //facilite la comprehension
         initiale = r1;
 
         String date = initiale.getDate();
-        LocalDate localDate = LocalDate.parse(date);
-        modif_date.setValue(localDate);
+        LocalDate localDate = LocalDate.parse(date); System.out.println("test2= " );
+        modif_date.setValue(localDate);System.out.println("test1= " );
         min.setValue(initiale.getmin());
-        heure.setValue(initiale.getheure());
+        heure.setValue(initiale.getheure()); System.out.println("test3= " );
         activite.setValue(initiale.getNomActivite());
-
     }
 
     public void nouvelleREservation(Reservation NewReservation) {
@@ -99,12 +98,16 @@ public class ModifReservation2Controller {
         int heureA = (int) heure.getValue();
         int minutes = (int) min.getValue();
         String temps = String.valueOf(heureA) + ":" + String.valueOf(minutes);
-        NewReservation.setHeure(temps);
+
 
         String activitee = (String) activite.getValue();
         NewReservation.setNomActivite(activitee);
-    }
+        int index = GestionDesReservations.getReservationArrayList().indexOf(initiale);
+        Reservation newResev = new Reservation(NewReservation.getDate(), temps, NewReservation.getNomActivite());
+       GestionDesReservations.getReservationArrayList().remove(index);
+       GestionDesReservations.getReservationArrayList().add(index, newResev);
 
+    }
 
     //Methode pour fermer la fenetre actuellement ouverte
     @FXML
@@ -128,7 +131,6 @@ public class ModifReservation2Controller {
         stage.setScene(scene);
         stage.show();
     }
-
 
     //Methode qui enregistre les modifications de l'utilisateur
     @FXML
@@ -185,8 +187,6 @@ public class ModifReservation2Controller {
         }
         return false;
     }
-
-
 }
 
 

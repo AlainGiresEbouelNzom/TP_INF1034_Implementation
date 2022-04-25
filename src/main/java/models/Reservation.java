@@ -18,6 +18,7 @@ public class Reservation implements Serializable {
     }
 
     public int getmin() {
+        System.out.println("getmin= " + heure );
         String temp = String.valueOf(heure.charAt(3));
         temp += String.valueOf(heure.charAt(4));
         int min = Integer.parseInt(temp);

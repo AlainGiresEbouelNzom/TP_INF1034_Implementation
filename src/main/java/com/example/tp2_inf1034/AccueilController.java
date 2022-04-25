@@ -127,7 +127,6 @@ public class AccueilController implements Initializable {
         out.writeObject(GestionDesReservations.getReservationArrayList());
         out.close();
         fos.close();
-
     }
     //Chargement des réservations à partir du fichier de sauvegarde
     @FXML
