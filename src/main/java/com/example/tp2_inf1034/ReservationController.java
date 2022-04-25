@@ -20,7 +20,8 @@ public class ReservationController implements Initializable {
     private DatePicker idDate;
     @FXML
     private Label idMessage;
-    private LocalDate nextYear = LocalDate.of(2023, 1, 1);
+    LocalDate today = LocalDate.now();
+    LocalDate nextYear = LocalDate.of(today.getYear() + 1, today.getMonth(), today.getDayOfMonth());
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -30,21 +31,28 @@ public class ReservationController implements Initializable {
     public void onClickConfirmer(MouseEvent mouseEvent) {
 
 
-        if(idActivitee.getValue() == "Choisir une activitée..." || idDate.getValue() == null || idPlage.getValue() == "Choisir une heure..."){
+        if (idActivitee.getValue() == "Choisir une activitée..." || idDate.getValue() == null || idPlage.getValue() == "Choisir une heure...") {
             idMessage.setId("red");
             idMessage.setText("Veuillez remplir tous les champs.");
-            return;
+
         }
-        else if(idDate.getValue().isAfter(nextYear) || idDate.getValue().isBefore(java.time.LocalDate.now()) ){
+        else if (idDate.getValue().isAfter(nextYear)) {
             idMessage.setId("red");
-            idMessage.setText("L'activité doit se passer cette année");
-            return;
-        }
-        else {
+            idMessage.setText("La réservation ne peut pas excéder 12 mois");
+
+        } else if (idDate.getValue().isBefore(LocalDate.now())) {
+            idMessage.setId("red");
+            idMessage.setText("La date doit être antérieure au " + nextYear);
+
+        } else {
             idMessage.setId("green");
             idMessage.setText("Réservation confirmée.");
 
             GestionDesReservations.getReservationObservList().add(new Reservation(idDate.getValue().toString(), idPlage.getValue().toString() + "H00", idActivitee.getValue().toString()));
+
+            idDate.setValue(null);
+            idPlage.setValue("");
+            idActivitee.setValue("");
         }
     }
 

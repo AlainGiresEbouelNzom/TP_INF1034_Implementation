@@ -15,6 +15,7 @@ import models.Reservation;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class ModifReservation2Controller {
@@ -79,7 +80,7 @@ public class ModifReservation2Controller {
     }
      */
 
-    public void initializeData(Reservation r1)  {
+    public void initializeData(Reservation r1) {
         //Pour que l'utilisateur puisse voir les information du bouton qu'il a clique
         //facilite la comprehension
         initiale = r1;
@@ -104,8 +105,8 @@ public class ModifReservation2Controller {
         NewReservation.setNomActivite(activitee);
         int index = GestionDesReservations.getReservationObservList().indexOf(initiale);
         Reservation newResev = new Reservation(NewReservation.getDate(), temps, NewReservation.getNomActivite());
-       GestionDesReservations.getReservationObservList().remove(index);
-       GestionDesReservations.getReservationObservList().add(index, newResev);
+        GestionDesReservations.getReservationObservList().remove(index);
+        GestionDesReservations.getReservationObservList().add(index, newResev);
 
     }
 
@@ -117,8 +118,8 @@ public class ModifReservation2Controller {
     }
 
     public void onSupprimerBtnClick(ActionEvent actionEvent) {
-       GestionDesReservations.getReservationObservList().remove(initiale);
-       handleCloseButtonAction();
+        GestionDesReservations.getReservationObservList().remove(initiale);
+        handleCloseButtonAction();
     }
 
     // Methode qui ouvre la fenêtre de confirmation
@@ -136,18 +137,15 @@ public class ModifReservation2Controller {
     @FXML
     public void onSauvegarderBtnClick(MouseEvent mouseEvent) throws IOException {
 
-        if (confirmationModification()) {
+        if (validationChamps() && confirmationModification()) {
 
-            message1.setText("");
-            message2.setText("");
-            boolean action = validationChamps();
-            if (action == true) {
-                nouvelleREservation(initiale);
-                message1.setText("Les modifications ont été enrengistrés");
-                message1.setTextFill(Color.GREEN);
-            }
+            message1.setText("Les modifications ont été enrengistrés");
+            message1.setTextFill(Color.GREEN);
+            nouvelleREservation(initiale);
+
+            handleCloseButtonAction();
         }
-        handleCloseButtonAction();
+
     }
 
     //Fenêtre de confirmation de modifications
@@ -163,18 +161,21 @@ public class ModifReservation2Controller {
     public boolean validationChamps() {
         message1.setText("");
         message2.setText("");
+
         int zone = 0;
         LocalDate unedate = modif_date.getValue();
         String date = unedate.toString();
         LocalDate localDate = LocalDate.parse(date);
-        LocalDate nextYear = LocalDate.of(2023, 1, 1);
         LocalDate today = LocalDate.now();
+        LocalDate nextYear =   LocalDate.of(today.getYear() + 1, today.getMonth(), today.getDayOfMonth());
+
+
         if (localDate.isAfter(nextYear)) {
-            message1.setText("L'activité doit se passer cette année");
+            message1.setText("La date doit etre antérieure au " + nextYear);
             zone += 1;
         }
         if (localDate.isBefore(today)) {
-            message1.setText("La date doit etre plus grande qu'aujourd'hui");
+            message1.setText("La date doit etre ultérieure ou égale au " + today);
             zone += 1;
         }
 
@@ -182,10 +183,11 @@ public class ModifReservation2Controller {
             message2.setText("Veuillez remplir tous les champs!");
             zone += 1;
         }
-        if (zone == 0) {
-            return true;
+        if (zone != 0) {
+            message1.setTextFill(Color.RED);
+            return false;
         }
-        return false;
+        return true;
     }
 }
 
