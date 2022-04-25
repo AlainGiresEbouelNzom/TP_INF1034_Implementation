@@ -14,62 +14,70 @@
     <Label styleClass="titre" text="Modifiez les champs" />
 
     <HBox>
-        <Label>La date</Label> <!--doit etre plus grande que la date actuelle et pas trop loin-->
-        <DatePicker fx:id="modif_date" prefHeight="23.0" prefWidth="475.0" />
+      <AnchorPane prefHeight="0.0" prefWidth="575.0">
+         <children> <!--doit etre plus grande que la date actuelle et pas trop loin-->
+              <DatePicker fx:id="modif_date" prefHeight="39.0" prefWidth="454.0" AnchorPane.leftAnchor="100.0" />
+              <Label>La date</Label>
+         </children>
+      </AnchorPane>
     </HBox>
     <HBox>
-        <Label>L'heure :</Label>
-        <VBox>
-            <ChoiceBox fx:id="heure" value="HH" prefHeight="23.0" prefWidth="360">
-                <items>
-                    <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="05" />
-                        <String fx:value="06" />
-                        <String fx:value="07" />
-                        <String fx:value="08" />
-                        <String fx:value="09" />
-                        <String fx:value="10" />
-                        <String fx:value="11" />
-                        <String fx:value="12" />
-                        <String fx:value="13" />
-                        <String fx:value="14" />
-                        <String fx:value="15" />
-                        <String fx:value="16" />
-                        <String fx:value="17" />
-                        <String fx:value="17" />
-                        <String fx:value="19" />
-                        <String fx:value="20" />
-                        <String fx:value="21" />
-                    </FXCollections>
-                </items>
-            </ChoiceBox>
-        </VBox>
-        <VBox>
-            <ChoiceBox fx:id="min" value="MM" prefHeight="23.0" prefWidth="360">
-                <items>
-                    <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="00" />
-                        <String fx:value="15" />
-                        <String fx:value="30" />
-                        <String fx:value="45" />
-                    </FXCollections>
-                </items>
-            </ChoiceBox>
-        </VBox>
+      <AnchorPane prefHeight="0.0" prefWidth="460.0">
+         <children>
+               <ChoiceBox fx:id="min" prefHeight="39.0" prefWidth="230.0" value="MM" AnchorPane.leftAnchor="100.0">
+                   <items>
+                       <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="00" />
+                           <String fx:value="15" />
+                           <String fx:value="30" />
+                           <String fx:value="45" />
+                       </FXCollections>
+                   </items>
+               </ChoiceBox>
+               <ChoiceBox fx:id="heure" prefHeight="39.0" prefWidth="220.0" value="HH" AnchorPane.leftAnchor="335.0">
+                   <items>
+                       <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="05" />
+                           <String fx:value="06" />
+                           <String fx:value="07" />
+                           <String fx:value="08" />
+                           <String fx:value="09" />
+                           <String fx:value="10" />
+                           <String fx:value="11" />
+                           <String fx:value="12" />
+                           <String fx:value="13" />
+                           <String fx:value="14" />
+                           <String fx:value="15" />
+                           <String fx:value="16" />
+                           <String fx:value="17" />
+                           <String fx:value="17" />
+                           <String fx:value="19" />
+                           <String fx:value="20" />
+                           <String fx:value="21" />
+                       </FXCollections>
+                   </items>
+               </ChoiceBox>
+              <Label>L'heure :</Label>
+         </children>
+      </AnchorPane>
 
     </HBox>
     <HBox>
-        <Label>Activité</Label>
-        <ChoiceBox fx:id="activite" value="Choisissez une activité" prefHeight="23.0" prefWidth="475.00">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Badminton" />
-                    <String fx:value="Soccer" />
-                    <String fx:value="Musculation" />
-                    <String fx:value="Tennis" />
-                </FXCollections>
-            </items>
-        </ChoiceBox>
+      <AnchorPane prefHeight="0.0" prefWidth="200.0">
+         <children>
+              <ChoiceBox fx:id="activite" prefHeight="39.0" prefWidth="454.0" value="Choisissez une activité" AnchorPane.leftAnchor="100.0">
+                  <items>
+                      <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="Badminton" />
+                          <String fx:value="Soccer" />
+                          <String fx:value="Musculation" />
+                          <String fx:value="Tennis" />
+                      </FXCollections>
+                  </items>
+              </ChoiceBox>
+              <Label prefHeight="27.0" prefWidth="468.0">Activité</Label>
+         </children>
+      </AnchorPane>
     </HBox>
 
 
@@ -77,7 +85,7 @@
         <padding>
             <Insets bottom="20.0" left="20.0" />
         </padding>
-    <Button id="supprimerBtn" fx:id="supprimerBtn" mnemonicParsing="false" onAction="#onSupprimerBtnClick" text="Supprimer la réservation" />
+    <Button id="supprimerBtn" fx:id="supprimerBtn" mnemonicParsing="false" onAction="#onSupprimerBtnClick" prefHeight="39.0" prefWidth="250.0" text="Supprimer la réservation" />
 
               <Button fx:id="reinitialiser" onMouseClicked="#reinitialiserChamps">Reinitialiser</Button>
         <Button fx:id="enregistrer" onMouseClicked="#onSauvegarderBtnClick">Enregistrer</Button>
