@@ -67,18 +67,32 @@
             <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="80.0" text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <DatePicker fx:id="idDate" prefHeight="30" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-            <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="136.0" text="Plage horraire:" translateY="5.0" GridPane.rowIndex="3" />
+            <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="136.0" text="Heure:" translateY="5.0" GridPane.rowIndex="3" />
+
             <ChoiceBox fx:id="idPlage" prefHeight="30" prefWidth="219.0" translateY="5.0" value="Choisir une heure..." GridPane.columnIndex="1" GridPane.rowIndex="3">
                <items>
                   <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="11H" />
-                     <String fx:value="13H" />
-                     <String fx:value="15H" />
-                     <String fx:value="17H" />
-                     <String fx:value="19H" />
+                     <String fx:value="05" />
+                     <String fx:value="06" />
+                     <String fx:value="07" />
+                     <String fx:value="08" />
+                     <String fx:value="09" />
+                     <String fx:value="10" />
+                     <String fx:value="11" />
+                     <String fx:value="12" />
+                     <String fx:value="13" />
+                     <String fx:value="14" />
+                     <String fx:value="15" />
+                     <String fx:value="16" />
+                     <String fx:value="17" />
+                     <String fx:value="17" />
+                     <String fx:value="19" />
+                     <String fx:value="20" />
+                     <String fx:value="21" />
                   </FXCollections>
                </items>
             </ChoiceBox>
+
             <columnConstraints>
                <ColumnConstraints />
                <ColumnConstraints />

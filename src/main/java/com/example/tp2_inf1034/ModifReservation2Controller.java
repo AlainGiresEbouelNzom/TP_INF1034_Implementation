@@ -95,9 +95,9 @@ public class ModifReservation2Controller {
     public void nouvelleREservation(Reservation NewReservation) {
         NewReservation.setDate(modif_date.getValue().toString());
 
-        int heureA = (int) heure.getValue();
-        int minutes = (int) min.getValue();
-        String temps = String.valueOf(heureA) + ":" + String.valueOf(minutes);
+        String heureA = (String)heure.getValue();
+        String minutes = (String)min.getValue();
+        String temps = heureA + ":" + minutes;
 
 
         String activitee = (String) activite.getValue();

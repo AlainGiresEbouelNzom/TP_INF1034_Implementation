@@ -56,6 +56,6 @@ public class Reservation implements Serializable {
     public String toString() {
         return  "Date = " + date +
                 "    | Heure = " + heure +
-                "h    | " + " Activité = " + nomActivite;
+                "    | " + " Activité = " + nomActivite;
     }
 }
