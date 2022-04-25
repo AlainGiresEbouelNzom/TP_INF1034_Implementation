@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
@@ -21,7 +20,6 @@ import models.Reservation;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AccueilController implements Initializable {
@@ -105,7 +103,7 @@ public class AccueilController implements Initializable {
         int count = 0;
         ImageView imageView = new ImageView(new Image("images/Reservation.png"));
 
-        for (Reservation reservation : GestionDesReservations.getReservationArrayList())
+        for (Reservation reservation : GestionDesReservations.getReservationObservList())
             historique.append(++count).append("-").append("Activité : ").append(reservation.getNomActivite()).
                     append("\n\tDate : ").append(reservation.getDate()).append("\n\tHeure : ").
                     append(reservation.getheure()).append("h\n ------------------------------------------\n");
@@ -124,7 +122,7 @@ public class AccueilController implements Initializable {
     public void onSauvegarderClick(ActionEvent actionEvent) throws IOException {
         FileOutputStream fos = new FileOutputStream("Sauvegarde.txt");
         ObjectOutputStream out = new ObjectOutputStream(fos);
-        out.writeObject(GestionDesReservations.getReservationArrayList());
+        out.writeObject(GestionDesReservations.getReservationObservList());
         out.close();
         fos.close();
     }

@@ -9,12 +9,11 @@ import javafx.scene.layout.Pane;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
 
 public class GestionDesReservations {
 
     //private static ArrayList<Reservation> reservationArrayList = new ArrayList<>();
-    private static ObservableList<Reservation> reservationArrayList = FXCollections.observableArrayList();
+    private static ObservableList<Reservation> reservationObservList = FXCollections.observableArrayList();
     private static BorderPane acceuilBorderPane;
     private static Pane reservationPane;
     private static ChoiceBox choiceBoxActivite;
@@ -23,7 +22,7 @@ public class GestionDesReservations {
 
     public GestionDesReservations() throws IOException, ClassNotFoundException {
         chargerReservation();
-        reservationArrayList.add(new Reservation("2022-06-05", "15H15", "Soccer"));
+        reservationObservList.add(new Reservation("2022-06-05", "15H15", "Soccer"));
     }
 
     //Connexion avec la BorderPane de l'nterface Accueil
@@ -51,8 +50,8 @@ public class GestionDesReservations {
     //    public static ArrayList<Reservation> getReservationArrayList() {
 //        return reservationArrayList;
 //    }
-    public static ObservableList<Reservation> getReservationArrayList() {
-        return reservationArrayList;
+    public static ObservableList<Reservation> getReservationObservList() {
+        return reservationObservList;
     }
 
     //Chargement de la liste des réservations à partir du fichier de sauvegarde

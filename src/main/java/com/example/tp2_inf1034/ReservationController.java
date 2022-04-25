@@ -44,7 +44,7 @@ public class ReservationController implements Initializable {
             idMessage.setId("green");
             idMessage.setText("Réservation confirmée.");
 
-            GestionDesReservations.getReservationArrayList().add(new Reservation(idDate.getValue().toString(), idPlage.getValue().toString() + "H00", idActivitee.getValue().toString()));
+            GestionDesReservations.getReservationObservList().add(new Reservation(idDate.getValue().toString(), idPlage.getValue().toString() + "H00", idActivitee.getValue().toString()));
         }
     }
 

@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.ArrayList;
+
 import models.Client;
 import models.GestionDesReservations;
 import models.Reservation;
@@ -31,7 +31,7 @@ public class ModifReservation1Controller {
     public ModifReservation1Controller() {
         // ListeReservationController stockageListeDansClasse = new ListeReservationController();
         //reservation = stockageListeDansClasse.getListeOfficielReservation();
-        reservation = GestionDesReservations.getReservationArrayList();
+        reservation = GestionDesReservations.getReservationObservList();
 
     }
 

@@ -102,10 +102,10 @@ public class ModifReservation2Controller {
 
         String activitee = (String) activite.getValue();
         NewReservation.setNomActivite(activitee);
-        int index = GestionDesReservations.getReservationArrayList().indexOf(initiale);
+        int index = GestionDesReservations.getReservationObservList().indexOf(initiale);
         Reservation newResev = new Reservation(NewReservation.getDate(), temps, NewReservation.getNomActivite());
-       GestionDesReservations.getReservationArrayList().remove(index);
-       GestionDesReservations.getReservationArrayList().add(index, newResev);
+       GestionDesReservations.getReservationObservList().remove(index);
+       GestionDesReservations.getReservationObservList().add(index, newResev);
 
     }
 
@@ -117,7 +117,7 @@ public class ModifReservation2Controller {
     }
 
     public void onSupprimerBtnClick(ActionEvent actionEvent) {
-       GestionDesReservations.getReservationArrayList().remove(initiale);
+       GestionDesReservations.getReservationObservList().remove(initiale);
        handleCloseButtonAction();
     }
 
