@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane id="mainBorderpane" fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="538.0" stylesheets="@../../../styles/Reservation.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.ReservationController">
+<BorderPane id="mainBorderpane" fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="690.0" stylesheets="@../../../styles/Reservation.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp2_inf1034.ReservationController">
    <top>
 
       <AnchorPane fx:id="top" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="538.0" BorderPane.alignment="CENTER">
@@ -47,7 +47,7 @@
             </padding>
 
             <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="96.0" text="Activité:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ChoiceBox fx:id="idActivitee" prefHeight="25.0" prefWidth="220.0" value="Choisir une activitée..." GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <ChoiceBox fx:id="idActivitee" prefHeight="39.0" prefWidth="407.0" value="Choisir une activitée..." GridPane.columnIndex="1" GridPane.rowIndex="0">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -65,11 +65,11 @@
             <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="100.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
             <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="80.0" text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <DatePicker fx:id="idDate" prefHeight="30" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="idDate" prefHeight="39.0" prefWidth="407.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
             <Label layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="136.0" text="Heure:" translateY="5.0" GridPane.rowIndex="3" />
 
-            <ChoiceBox fx:id="idPlage" prefHeight="30" prefWidth="219.0" translateY="5.0" value="Choisir une heure..." GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ChoiceBox fx:id="idPlage" prefHeight="39.0" prefWidth="407.0" translateY="5.0" value="Choisir une heure..." GridPane.columnIndex="1" GridPane.rowIndex="3">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="05" />
@@ -106,19 +106,22 @@
                <RowConstraints />
             </rowConstraints>
          </GridPane>
-         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="591.0">
             <children>
       
-               <Button id="enregistrer" onMouseClicked="#onClickConfirmer" prefHeight="30.0" prefWidth="168.0" text="Confirmer">
+               <Button id="enregistrer" onMouseClicked="#onClickConfirmer" prefHeight="40.0" prefWidth="203.0" text="Confirmer">
                   <HBox.margin>
                      <Insets right="5.0" />
                   </HBox.margin>
                </Button>
-               <Button id="reinitialiser" mnemonicParsing="false" onMouseClicked="#onClickAnnuler" prefHeight="30.0" prefWidth="166.0" text="Annuler" />
+               <Button id="reinitialiser" mnemonicParsing="false" onMouseClicked="#onClickAnnuler" prefHeight="40.0" prefWidth="195.0" text="Annuler" />
             </children>
             <VBox.margin>
                <Insets top="10.0" />
             </VBox.margin>
+            <padding>
+               <Insets left="20.0" right="35.0" />
+            </padding>
          </HBox>
          <Label fx:id="idMessage" text="" translateY="40.0" />
          <BorderPane.margin>

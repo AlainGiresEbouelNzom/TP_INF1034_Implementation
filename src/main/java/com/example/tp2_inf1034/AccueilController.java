@@ -122,7 +122,7 @@ public class AccueilController implements Initializable {
     public void onSauvegarderClick(ActionEvent actionEvent) throws IOException {
         FileOutputStream fos = new FileOutputStream("Sauvegarde.txt");
         ObjectOutputStream out = new ObjectOutputStream(fos);
-        out.writeObject(GestionDesReservations.getReservationObservList());
+      //  out.writeObject(GestionDesReservations.getReservationObservList());
         out.close();
         fos.close();
     }
@@ -130,9 +130,9 @@ public class AccueilController implements Initializable {
     @FXML
     public void onChargerClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText("Attention! Toutes les réservations non sauvegardées seront perdues");
-
-      if(alert.showAndWait().get().getButtonData().toString().equalsIgnoreCase("OK_DONE"))
+//        alert.setContentText("Attention! Toutes les réservations non sauvegardées seront perdues");
+//
+//      if(alert.showAndWait().get().getButtonData().toString().equalsIgnoreCase("OK_DONE"))
         GestionDesReservations.chargerReservation();
     }
 

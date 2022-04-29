@@ -4,3 +4,11 @@
     -fx-border-color: black;
     -fx-border-radius: 15;
     -fx-border-width: 2;}
+
+
+.titre {
+    -fx-font-size: 20pt;
+    -fx-fill: #333333;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}
