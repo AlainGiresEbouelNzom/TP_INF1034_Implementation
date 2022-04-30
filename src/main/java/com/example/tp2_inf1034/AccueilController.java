@@ -1,14 +1,18 @@
 package com.example.tp2_inf1034;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -52,6 +56,7 @@ public class AccueilController implements Initializable {
     @FXML
     public MenuItem aProposMenuItem;
     @FXML
+    public Slider ajusterSlider;
 
 
     //Chaque pane contiendra une interface à afficher
@@ -87,6 +92,19 @@ public class AccueilController implements Initializable {
         aProposMenuItem.setText("******APPLICATION DE RÉSERVATION D'ACTIVITÉS SPORTIVES****\nVous pouvez créer de nouvelles réservations, " +
                 "les consuter,les modifier et même les supprimer.\n" +
                 "Il est aussi possible de consulter une description détaillée des différentes activités proposées.");
+
+        ajutementTailleTexte(centerHbox);
+    }
+
+    //Méthode d'évènement pour ajustement de la taille de texte
+    private void ajutementTailleTexte(Parent currentPane) {
+        ajusterSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                double value = (double) newValue;
+                currentPane.setStyle("-fx-font-size: " + value * 0.24 + "pt;");
+            }
+        });
     }
 
     //Arrêt du programme
@@ -117,15 +135,17 @@ public class AccueilController implements Initializable {
         alert.show();
 
     }
+
     //Sauvegarde des réservations dans un fichier
     @FXML
     public void onSauvegarderClick(ActionEvent actionEvent) throws IOException {
         FileOutputStream fos = new FileOutputStream("Sauvegarde.txt");
         ObjectOutputStream out = new ObjectOutputStream(fos);
-      //  out.writeObject(GestionDesReservations.getReservationObservList());
+        //  out.writeObject(GestionDesReservations.getReservationObservList());
         out.close();
         fos.close();
     }
+
     //Chargement des réservations à partir du fichier de sauvegarde
     @FXML
     public void onChargerClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
@@ -138,7 +158,7 @@ public class AccueilController implements Initializable {
 
     public void onA_ProposMenuItemClick(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION, aProposMenuItem.getText());
-      alert.show();
+        alert.show();
     }
 
     //Peuplement des listes
@@ -180,14 +200,22 @@ public class AccueilController implements Initializable {
 
     //Affichage des interfaces selon l'évènement déclenché
     private void affichage(Event event) {
-        if (event.getSource() == accueilImage)
+        if (event.getSource() == accueilImage) {
             racine.setCenter(centerHbox);
-        else if (event.getSource() == reservationImage || event.getSource() == reservationHyperlink || event.getSource() == reservationMenuItem)
+            ajutementTailleTexte(centerHbox);
+        } else if (event.getSource() == reservationImage || event.getSource() == reservationHyperlink || event.getSource() == reservationMenuItem)
+        {
             racine.setCenter(reservationPane);
-        else if (event.getSource() == modificationImage || event.getSource() == modificationHyperlink || event.getSource() == modifReservationMenuItem)
+            ajutementTailleTexte(reservationPane);
+        }
+        else if (event.getSource() == modificationImage || event.getSource() == modificationHyperlink || event.getSource() == modifReservationMenuItem) {
             racine.setCenter(modificationPane);
-        else if (event.getSource() == informationsImage || event.getSource() == informationHyperlink || event.getSource() == informationMenuItem)
+            ajutementTailleTexte(modificationPane);
+        }
+        else if (event.getSource() == informationsImage || event.getSource() == informationHyperlink || event.getSource() == informationMenuItem) {
             racine.setCenter(ficheInformationPane);
+            ajutementTailleTexte(ficheInformationPane);
+        }
     }
 
     //Changement de curseur au survol des images

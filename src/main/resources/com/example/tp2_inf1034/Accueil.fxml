@@ -44,6 +44,11 @@
                         <MenuItem fx:id="aProposMenuItem" onAction="#onA_ProposMenuItemClick" text="À _propos" />
                     </Menu>
                 </MenuBar>
+                <VBox alignment="CENTER" layoutX="356.0" layoutY="12.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+                    <Slider fx:id="ajusterSlider" blockIncrement="1.0" min="32.0" value="66.0" />
+               <Label text="Ajuster la taille du texte" />
+                </VBox>
+
             </children>
 
         </AnchorPane>
